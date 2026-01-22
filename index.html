@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Special Question</title>
+    <title>Our Journey</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="hero">
         <div class="hero-content">
             <h1 class="fade-in">Will You Be My Girlfriend?</h1>
-            <p class="fade-in-delay">Scroll down to see our story...</p>
+            <p class="fade-in-delay">Scroll down to follow our journey...</p>
             <div class="scroll-indicator">↓</div>
         </div>
     </header>
 
-    <main class="timeline">
+    <main class="roadmap">
+        <svg class="roadmap-path" preserveAspectRatio="none">
+            <path class="path-line" fill="none" stroke="#8B5CF6" stroke-width="3" stroke-dasharray="10,10"/>
+        </svg>
+
         <!-- Memory 1 -->
-        <section class="memory-section">
-            <div class="memory-card reveal">
+        <section class="memory-stop reveal left">
+            <div class="marker">
+                <div class="x-mark">✕</div>
+            </div>
+            <div class="memory-content">
                 <div class="image-container">
                     <img src="photo1.jpg" alt="Our first memory">
                 </div>
@@ -30,8 +37,11 @@
         </section>
 
         <!-- Memory 2 -->
-        <section class="memory-section">
-            <div class="memory-card reveal reverse">
+        <section class="memory-stop reveal right">
+            <div class="marker">
+                <div class="x-mark">✕</div>
+            </div>
+            <div class="memory-content">
                 <div class="image-container">
                     <img src="photo2.jpg" alt="Our second memory">
                 </div>
@@ -43,8 +53,11 @@
         </section>
 
         <!-- Memory 3 -->
-        <section class="memory-section">
-            <div class="memory-card reveal">
+        <section class="memory-stop reveal left">
+            <div class="marker">
+                <div class="x-mark">✕</div>
+            </div>
+            <div class="memory-content">
                 <div class="image-container">
                     <img src="photo3.jpg" alt="Our third memory">
                 </div>
@@ -56,8 +69,11 @@
         </section>
 
         <!-- Memory 4 -->
-        <section class="memory-section">
-            <div class="memory-card reveal reverse">
+        <section class="memory-stop reveal right">
+            <div class="marker">
+                <div class="x-mark">✕</div>
+            </div>
+            <div class="memory-content">
                 <div class="image-container">
                     <img src="photo4.jpg" alt="Our fourth memory">
                 </div>
@@ -68,12 +84,15 @@
             </div>
         </section>
 
-        <!-- Final Section -->
-        <section class="memory-section final-section">
-            <div class="memory-card reveal">
+        <!-- Final Destination -->
+        <section class="memory-stop reveal center final">
+            <div class="marker final-marker">
+                <div class="heart-mark">♥</div>
+            </div>
+            <div class="memory-content">
                 <div class="text-box centered">
-                    <h2>So, What Do You Say?</h2>
-                    <p>I know this might seem like a big question, but my heart has already decided. You're the person I want to laugh with, grow with, and create more beautiful memories with.</p>
+                    <h2>Our Destination</h2>
+                    <p>Every step of this journey has led me to you. You're not just a stop along the way - you're the destination I've been searching for.</p>
                     <p class="question">Will you be my girlfriend?</p>
                 </div>
             </div>
