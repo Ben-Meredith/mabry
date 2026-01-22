@@ -5,8 +5,32 @@
 }
 
 body {
-    font-family: 'Georgia', serif;
-    background: #f9f5f0;
+    font-family: Arial, sans-serif;
+    background: #e8dcc4;
+    background-image:
+        /* Horizontal roads */
+        linear-gradient(90deg, transparent 0%, transparent 48%, #d4c4a8 48%, #d4c4a8 48.5%, #666 48.5%, #666 49%, #d4c4a8 49%, #d4c4a8 49.5%, transparent 49.5%, transparent 100%),
+        linear-gradient(90deg, transparent 0%, transparent 48%, #d4c4a8 48%, #d4c4a8 48.5%, #666 48.5%, #666 49%, #d4c4a8 49%, #d4c4a8 49.5%, transparent 49.5%, transparent 100%),
+        /* Vertical roads */
+        linear-gradient(0deg, transparent 0%, transparent 48%, #d4c4a8 48%, #d4c4a8 48.5%, #666 48.5%, #666 49%, #d4c4a8 49%, #d4c4a8 49.5%, transparent 49.5%, transparent 100%),
+        linear-gradient(0deg, transparent 0%, transparent 48%, #d4c4a8 48%, #d4c4a8 48.5%, #666 48.5%, #666 49%, #d4c4a8 49%, #d4c4a8 49.5%, transparent 49.5%, transparent 100%),
+        /* Grid lines */
+        repeating-linear-gradient(0deg, transparent, transparent 35px, rgba(139, 92, 246, 0.05) 35px, rgba(139, 92, 246, 0.05) 36px),
+        repeating-linear-gradient(90deg, transparent, transparent 35px, rgba(139, 92, 246, 0.05) 35px, rgba(139, 92, 246, 0.05) 36px);
+    background-size:
+        100% 600px,
+        100% 400px,
+        800px 100%,
+        600px 100%,
+        35px 35px,
+        35px 35px;
+    background-position:
+        0 200px,
+        0 800px,
+        300px 0,
+        700px 0,
+        0 0,
+        0 0;
     color: #333;
     overflow-x: hidden;
 }
@@ -18,22 +42,38 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #e8dcc4;
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 35px, rgba(139, 92, 246, 0.1) 35px, rgba(139, 92, 246, 0.1) 36px),
+        repeating-linear-gradient(90deg, transparent, transparent 35px, rgba(139, 92, 246, 0.1) 35px, rgba(139, 92, 246, 0.1) 36px);
     color: white;
     position: relative;
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    font-weight: 300;
-    letter-spacing: 2px;
+    background: #006747;
+    color: white;
+    padding: 2rem 3rem;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border: 8px solid white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    font-family: 'Highway Gothic', 'Arial Narrow', Arial, sans-serif;
+    max-width: 800px;
 }
 
 .hero-content p {
-    font-size: 1.5rem;
-    opacity: 0.9;
+    font-size: 1.2rem;
+    color: #333;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
     margin-bottom: 3rem;
+    display: inline-block;
 }
 
 .fade-in {
@@ -78,7 +118,7 @@ body {
 .roadmap {
     position: relative;
     padding: 4rem 2rem;
-    background: #f9f5f0;
+    background: transparent;
 }
 
 .roadmap-path {
@@ -86,21 +126,16 @@ body {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 4px;
+    width: 6px;
     height: 100%;
     pointer-events: none;
     z-index: 0;
 }
 
 .path-line {
-    stroke-dasharray: 15, 15;
-    animation: dash 30s linear infinite;
-}
-
-@keyframes dash {
-    to {
-        stroke-dashoffset: -1000;
-    }
+    stroke: #d94545;
+    stroke-width: 4;
+    stroke-dasharray: 12, 8;
 }
 
 /* Memory Stops */
@@ -131,56 +166,30 @@ body {
 }
 
 .x-mark {
-    width: 60px;
-    height: 60px;
-    background: #8B5CF6;
-    border: 4px solid #f9f5f0;
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    color: white;
+    font-size: 3rem;
+    color: #d94545;
     font-weight: bold;
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
-    animation: pulse 2s infinite;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .final-marker .heart-mark {
-    width: 80px;
-    height: 80px;
-    background: #EC4899;
-    border: 4px solid #f9f5f0;
-    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
-    color: white;
-    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5);
-    animation: heartbeat 1.5s infinite;
+    font-size: 3.5rem;
+    color: #d94545;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-}
-
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-    25% {
-        transform: scale(1.15);
-    }
-    50% {
-        transform: scale(1);
-    }
-}
 
 /* Memory Content */
 .memory-content {
@@ -209,21 +218,11 @@ body {
 
 .image-container {
     flex: 1;
-    max-width: 450px;
-    border-radius: 15px;
+    max-width: 400px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-    border: 8px solid white;
-    transform: rotate(-2deg);
-    transition: transform 0.5s ease;
-}
-
-.memory-stop.right .image-container {
-    transform: rotate(2deg);
-}
-
-.memory-stop.active .image-container {
-    transform: rotate(0deg) scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 3px solid #fff;
 }
 
 .image-container img {
@@ -235,44 +234,42 @@ body {
 
 .text-box {
     flex: 1;
-    max-width: 500px;
-    background: white;
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    border: 3px solid #8B5CF6;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #333;
 }
 
 .text-box.centered {
     text-align: center;
-    max-width: 700px;
-    border-color: #EC4899;
+    max-width: 600px;
 }
 
 .text-box h2 {
-    font-size: 2.2rem;
-    color: #8B5CF6;
-    margin-bottom: 1.5rem;
-    font-weight: 400;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
 }
 
 .text-box.centered h2 {
-    color: #EC4899;
+    color: #333;
 }
 
 .text-box p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 0.5rem;
 }
 
 .question {
-    font-size: 2rem;
-    color: #EC4899;
+    font-size: 1.3rem;
+    color: #d94545;
     font-weight: bold;
-    margin-top: 2rem;
-    font-style: italic;
+    margin-top: 1rem;
 }
 
 .memory-stop.final {
@@ -293,7 +290,6 @@ body {
     }
 
     .image-container {
-        transform: rotate(0deg) !important;
         max-width: 100%;
     }
 
@@ -304,11 +300,14 @@ body {
 
 @media (max-width: 768px) {
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
+        padding: 1.5rem 2rem;
+        letter-spacing: 2px;
     }
 
     .hero-content p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
     }
 
     .image-container img {
@@ -328,14 +327,10 @@ body {
     }
 
     .x-mark {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
 
     .final-marker .heart-mark {
-        width: 65px;
-        height: 65px;
-        font-size: 2rem;
+        font-size: 3rem;
     }
 }
